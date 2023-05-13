@@ -3,7 +3,7 @@
     include '../../../app/controllers/admin/conSubjects.php';
     session_start();
     if(!isset($_SESSION['user_logged_in'])) {
-        header("Location: login.php");
+        header("Location: auth/login.php");
     } else {
         $subjects = getAllSubjects();
         $id = $_GET['id'];
@@ -14,7 +14,7 @@
             $name = $_POST['name'];
             $email = $_POST['email'];
             $subject_id = $_POST['subject_id'];
-        
+
             if(editDosen($id, $name, $email, $subject_id)) {
                 header("Location: index.php");
             } else {

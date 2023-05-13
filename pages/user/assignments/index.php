@@ -4,7 +4,7 @@
   session_start();
 
   if(!isset($_SESSION['user_logged_in'])) {
-    header("Location: login.php");
+    header("Location: auth/login.php");
   } else {
     $id = $_SESSION['user_id'];
     if($_SESSION['role'] == 'dosen') {
@@ -123,7 +123,7 @@
                       <div class="col-lg-4 col-md-4 col-sm-12">
                           <div class="card card-statistic-2">
                               <div class="card-header text-center">
-                                  <strong style="font-size : 15pt"><?= $dt['title'] ?></strong> 
+                                  <strong style="font-size : 15pt"><?= $dt['title'] ?></strong>
                                   <p style="font-size : 9pt;"><?= $dt['subject'] ?><br><?= $dt['grade'] ?> <?= $dt['major'] ?></p>
                                   <hr>
                               </div>

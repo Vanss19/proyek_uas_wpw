@@ -1,8 +1,8 @@
-<?php 
+<?php
   include '../../../app/controllers/user/conSubmissions.php';
   session_start();
   if(!isset($_SESSION['user_logged_in'])) {
-    header("Location: login.php");
+    header("Location: auth/login.php");
   } else {
       $id = $_GET['id'];
       $data = getAllSubmissions($id);;

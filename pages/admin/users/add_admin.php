@@ -2,13 +2,13 @@
     include '../../../app/controllers/admin/conUsers.php';
     session_start();
     if(!isset($_SESSION['user_logged_in'])) {
-        header("Location: login.php");
+        header("Location: auth/login.php");
     } else {
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];
             $email = $_POST['email'];
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        
+
             if(addAdmin($name, $email, $password, 'admin')) {
                 header("Location: index.php");
             } else {

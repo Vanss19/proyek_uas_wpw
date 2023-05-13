@@ -3,7 +3,7 @@
     include '../../../app/controllers/admin/conGrades.php';
     session_start();
     if(!isset($_SESSION['user_logged_in'])) {
-        header("Location: login.php");
+        header("Location: auth/login.php");
     } else {
         $grades = getAllGrades();
         $id = $_GET['id'];
@@ -14,7 +14,7 @@
             $email = $_POST['email'];
             $nim = $_POST['nim'];
             $grade_id = $_POST['grade_id'];
-        
+
             if(editMahasiswa($id, $name, $email, $nim, $grade_id)) {
                 header("Location: index.php");
             } else {

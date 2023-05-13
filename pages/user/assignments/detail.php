@@ -1,9 +1,9 @@
-<?php 
+<?php
   include '../../../app/controllers/user/conAssignments.php';
   include '../../../app/controllers/user/conSubmissions.php';
   session_start();
   if(!isset($_SESSION['user_logged_in'])) {
-    header("Location: login.php");
+    header("Location: auth/login.php");
   } else {
       $id = $_GET['id'];
       $data = getAssignmentById($id);
@@ -119,7 +119,7 @@
                         <h6>Deskripsi: <?= $data['description'] ?></h6>
                         <h6>Deadline: <?= $data['deadline'] ?></h6>
                         <h6>
-                          Lampiran: 
+                          Lampiran:
                           <?php if ($data['file_path'] == null) : ?>
                             <span class="badge badge-danger">Tidak ada</span>
                           <?php else : ?>

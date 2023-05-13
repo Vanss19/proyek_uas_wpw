@@ -3,7 +3,7 @@
   session_start();
 
   if(!isset($_SESSION['user_logged_in'])) {
-    header("Location: login.php");
+    header("Location: auth/login.php");
   } else {
     $data = getAllMajors();
     $i = 1;
@@ -103,7 +103,7 @@
             <div class="card">
               <div class="card-header">
                 <h4><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdd"><i class="fas fa-plus"></i> Add</button></h4>
-                
+
               </div>
               <div class="card-body">
                 <div class="table-responsive">

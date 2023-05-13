@@ -5,5 +5,5 @@
         unset($_SESSION['user_logged_in']);
     }
 
-    header("Location: auth/login.php");
+    header("Location: login.php");
 ?>
